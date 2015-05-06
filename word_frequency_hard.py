@@ -54,14 +54,17 @@ def word_frequency(text):
     return freq_dict2
 
 def print_word_frequency(thedict):
-    newdict = sorted(thedict.items(), key=lambda x:x[1], reverse=True)
+    listed_dict = sorted(thedict.items(), key=lambda x:x[1], reverse=True)
+    thekeys = sorted(thedict.items(), key=lambda x:len(x[0]), reverse=True)
     number_of_occurences = 0
-    for item in newdict:
-        no_of_spaces = 13 - len(item[0])
+    longest_key = thekeys[0]
+    maxlen = len(longest_key[0])
+
+    for item in listed_dict:
+        no_of_spaces = (maxlen + 2) - len(item[0])
         number_of_occurences = int(item[1] // 6.9)
 
         print("\n" + item[0], end="")
-
 
         while no_of_spaces > 0:
             print(" ", end="")
