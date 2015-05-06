@@ -78,7 +78,7 @@ def print_word_frequency(thedict):
 
 
 if __name__=="__main__":
-    if len(sys.argv) > 1:
+    if len(sys.argv) > 2:
         print ("Input only one file, Using the first file")
         filename = sys.argv[1]
     else:
